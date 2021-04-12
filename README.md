@@ -1,3 +1,5 @@
+![Rubocop](https://github.com/mattrothstein/testing/actions/workflows/.github/workflows/linter.yaml/badge.svg)
+![RSpec](https://github.com/mattrothstein/testing/actions/workflows/.github/workflows/test.yaml/badge.svg)
 # Testing API
 
 This application is a sample testing API. There is a single endpoint that accepts the following data:
