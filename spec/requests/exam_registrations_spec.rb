@@ -103,7 +103,7 @@ RSpec.describe "ExamRegistrations", type: :request do
           expect(response).to have_http_status(400)
           expected_json_body = {
             error: {
-              "User" => {
+              user: {
                 phone_number: ["is invalid"],
                 first_name:   ["can't be blank"],
                 last_name:    ["can't be blank"]

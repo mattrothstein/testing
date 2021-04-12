@@ -37,7 +37,10 @@ module Testing
     config.api_only = true
 
 
-    Rails.logger = Logger.new(STDOUT)
-    config.logger = ActiveSupport::Logger.new("log/#{Rails.env}.log")
+    # Disabled logging in test
+    unless Rails.env.test?
+      Rails.logger = Logger.new(STDOUT)
+      config.logger = ActiveSupport::Logger.new("log/#{Rails.env}.log")
+    end
   end
 end
