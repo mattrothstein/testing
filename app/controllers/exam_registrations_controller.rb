@@ -8,7 +8,9 @@ class ExamRegistrationsController < ApplicationController
     exam_registration = user.exam_registrations.new(exam: exam, start_time: params[:start_time])
 
     if exam_registration.save!
-      Rails.logger.info(exam_registration)
+      Rails.logger.tagged("Exam Registered") do
+        logger.info(exam_registration)
+      end
       render json: exam_registration.to_json(include: { exam_window: { include: :exam } }), status: :ok
     end
   end
