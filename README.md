@@ -1,24 +1,51 @@
-# README
+# Testing API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a sample testing API. There is a single endpoint that accepts the following data:
 
-Things you may want to cover:
+```
+{
+  first_name: String,
+  last_name: String,
+  phone_number: String,
+  college_id: Integer,
+  exam_id: Integer,
+  start_time: DateTime
+}
+ ```
 
-* Ruby version
+### Instructions
+Execute the following commands to download gems and setup your database:
 
-* System dependencies
+```shell
+bundle install
+rails db:setup
+```
 
-* Configuration
+### Automated Tests
+Execute the following commands to run the automated test suite:
 
-* Database creation
+```shell
+rspec
+```
 
-* Database initialization
 
-* How to run the test suite
+### Manual Tests
+Once your application is being served locally on port 3000, you can manually test this application using the following `cURL` command:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+curl -X POST \
+  http://localhost:3000/exam_registrations \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 8ead4afd-1f49-4c6e-bb47-ae98406f7e8c' \
+  -H 'cache-control: no-cache' \
+  -d '{
+	"first_name":"mike",
+	"last_name":"rothstein",
+	"phone_number":"17862633710",
+	"college_id":"1",
+	"exam_id":"1",
+	"start_time":"2021-04-10T08:30:00-04:00"
+}
+'
+```
 
-* Deployment instructions
-
-* ...
