@@ -30,7 +30,7 @@ rspec
 
 
 ### Manual Tests
-Once your application is being served locally on port 3000, you can manually test this application using the following `cURL` command:
+Once your application is being served locally on port 3000, you can manually test this application using the following `cURL` command. You will need to adjust the `start_time` so that it falls within the start and end time of an exam window.
 
 ```
 curl -X POST \
@@ -39,9 +39,9 @@ curl -X POST \
   -H 'Postman-Token: 8ead4afd-1f49-4c6e-bb47-ae98406f7e8c' \
   -H 'cache-control: no-cache' \
   -d '{
-	"first_name":"mike",
+	"first_name":"matt",
 	"last_name":"rothstein",
-	"phone_number":"17862633710",
+	"phone_number":"17863051010",
 	"college_id":"1",
 	"exam_id":"1",
 	"start_time":"2021-04-10T08:30:00-04:00"
