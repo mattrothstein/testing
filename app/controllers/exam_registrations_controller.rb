@@ -7,10 +7,9 @@ class ExamRegistrationsController < ApplicationController
     exam              = college.exams.find(params[:exam_id])
     exam_registration = user.exam_registrations.new(exam: exam, start_time: params[:start_time])
 
-    if exam_registration.save
+    if exam_registration.save!
+      Rails.logger.info(exam_registration)
       render json: exam_registration.to_json(include: { exam_window: { include: :exam } }), status: :ok
-    else
-      render json: { error: { exam_registration: exam_registration.errors } }, status: 400
     end
   end
 
