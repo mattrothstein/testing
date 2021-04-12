@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    errors:
+      models:
+        exam_registration:
+          attributes:
+            exam_window:
+              required: "There is no exam available for the requested time"
+            start_time:
+              required: "Start time is required to register for exam"
+        user:
+          attributes:
+            college:
+              required: "There is no college found with the provided college_id"
+
